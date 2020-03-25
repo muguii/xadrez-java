@@ -2,6 +2,7 @@ package boardgame;
 
 public class Position {
 	
+	//Cada posicao tem uma linha e coluna que corresponde a uma linha e coluna da matriz
 	private int row;
 	private int column;
 	

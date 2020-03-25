@@ -8,8 +8,8 @@ public class ChessPiece extends Piece{
 	
 	private Color color;
 
-	//A peca de xadrez possui um tabuleiro e uma cor
-	//Ela chama o construtor do super para liga-la a um tabuleiro
+	//Cada peça de xadrez possui um tabuleiro e uma cor
+	//Ela chama o construtor do super para liga-la a um objeto board ja existente
 	public ChessPiece(Board board, Color color) {
 		super(board);
 		this.color = color;

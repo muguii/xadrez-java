@@ -16,7 +16,7 @@ public class UI {
 		System.out.println("  a b c d e f g h");
 	}
 	
-	//Printa a peca na tela individualmente
+	//Verifica cada elemento e printa o toString de cada peça (se nao tiver um objeto ainda ele printa " - ")
 	private static void printPiece(ChessPiece piece) {
 		if (piece == null) {
 			System.out.print("-");
