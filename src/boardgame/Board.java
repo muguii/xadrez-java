@@ -51,6 +51,7 @@ public class Board {
 		return row >= 0 && row < rows && column >= 0 && column < columns;
 	}
 	
+	//Ainda nao sei onde vai ser usado
 	public boolean positionExists(Position position) {
 		return positionExists(position.getRow(), position.getColumn());
 	}
