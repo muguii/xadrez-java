@@ -15,7 +15,7 @@ public class ChessMatch {
 	// Essa matriz esta salva dentro deste objeto board criado
 
 	public ChessMatch() {
-		board = new Board(8, 8);
+		board = new Board(8,8);
 		initialSetup();
 	}
 
@@ -47,7 +47,7 @@ public class ChessMatch {
 	
 	private void validateSourcePosition(Position position) {
 		if (!board.thereIsAPiece(position)) {
-			throw new ChessException("Não existe peça na posição de origem");
+			throw new ChessException("Nao existe peça na posiçao de origem");
 		}
 	}
 	
