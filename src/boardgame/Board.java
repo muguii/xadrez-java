@@ -12,7 +12,7 @@ public class Board {
 		}
 		this.rows = rows;
 		this.columns = columns;
-		pieces = new Piece[rows][columns]; // Cria minha matriz de PECAS GENERICAS
+		pieces = new Piece[rows][columns]; // Cria a matriz de PECAS GENERICAS
 	}
 
 	public int getRows() {
@@ -23,7 +23,7 @@ public class Board {
 		return columns;
 	}
 
-	// Retorna o OBJETO PEÇA que contem dada linha e coluna
+	// Retorna o OBJETO PEÇA que contem na matriz, dada linha e coluna
 	public Piece piece(int row, int column) {
 		if (!positionExists(row, column)) {
 			throw new BoardException("Posicao nao existe no tabuleiro");
@@ -31,7 +31,7 @@ public class Board {
 		return pieces[row][column];
 	}
 
-	// Retorna o OBJETO PEÇA dado uma POSIÇAO INTERNA desse objeto
+	// Retorna o OBJETO PEÇA, dada uma POSIÇAO INTERNA desse objeto
 	public Piece piece(Position position) {
 		if (!positionExists(position.getRow(), position.getColumn())) {
 			throw new BoardException("Posicao nao existe no tabuleiro");
