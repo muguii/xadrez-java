@@ -1,5 +1,8 @@
 package chess;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import boardgame.Board;
 import boardgame.Piece;
 import boardgame.Position;
@@ -12,6 +15,8 @@ public class ChessMatch {
 	private int turn;
 	private Color currentPlayer;
 	private Board board;
+	private List<ChessPiece> piecesOnTheBoard;
+	private List<ChessPiece> capturedPieces;
 
 	// Crio um objeto board de 8 linhas e 8 colunas e crio a matriz de PEÇAS GENERICAS[8][8]
 	// Essa matriz esta salva dentro deste objeto board criado
@@ -19,6 +24,8 @@ public class ChessMatch {
 		board = new Board(8,8);
 		turn = 1;
 		currentPlayer = Color.WHITE;
+		piecesOnTheBoard = new ArrayList<>();
+		capturedPieces = new ArrayList<>();
 		initialSetup();
 	}
 	
@@ -89,13 +96,20 @@ public class ChessMatch {
 	private Piece makeMove(Position source, Position target) {
 		Piece p = board.removePiece(source);
 		Piece capturedPiece = board.removePiece(target);
+		
+		if (capturedPiece != null) {
+			capturedPieces.add((ChessPiece)p); //Coloquei diferente, fiz um downcasting para ChessP.
+		}
+		
 		board.placePiece(p, target);
+		
 		return capturedPiece;
 	}
 	
 
 	private void placeNewPiece(char column, int row, ChessPiece piece) {
 		board.placePiece(piece, new ChessPosition(column, row).toPosition());
+		piecesOnTheBoard.add(piece);
 	}
 
 	private void initialSetup() {
