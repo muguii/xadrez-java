@@ -66,7 +66,6 @@ public class UI {
 			System.out.println("CHECKMATE!");
 			System.out.println("Vencedor: " + chessMatch.getCurrentPlayer());
 		}
-
 	}
 
 	// Printa a matriz na tela usando o metodo de printar cada peca
